@@ -1,0 +1,15 @@
+<div *ngIf="part">
+    <h2>{{ part.name }} Details</h2>
+    <div><span>id: </span>{{selectedPart.id}}</div>
+    <div>
+      <label>name:
+        <input [(ngModel)]="part.name" placeholder="name">
+      </label>
+      <br/>
+      <label>price:
+        <input [(ngModel)]="part.price" placeholder="price">
+      </label>
+    </div>
+    <button (click)="save()">save</button>
+    <button (click)="goBack()">go back</button>
+  </div>

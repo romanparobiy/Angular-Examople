@@ -1,0 +1,23 @@
+<h2>
+  List of spare parts
+</h2>
+<ul class="parts">
+  <li *ngFor="let p of parts">
+   <a routerLink="/detail/{{p.id}}">
+    <span class="bage">{{p.id}} </span> {{p.name}} <span class="price"> {{p.price}} </span>
+    </a>
+    <button class="delete" title="delete" (click)="delete(p)">x</button>
+  </li>
+</ul>
+<div>
+  <label>Part name:
+    <input #partName />
+  </label>
+  <label>Part price:
+    <input #partPrice />
+  </label>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button (click)="add(partName.value, partPrice.value); partName.value=''">
+    add
+  </button>
+</div>
